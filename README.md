@@ -13,6 +13,11 @@ In the project directory, you can run:
 cd client \
 yarn start
 
+### `yarn run server`
+
+cd server \
+yarn run server
+
 ### `yarn test`
 
 Launches a test runner for the server \
