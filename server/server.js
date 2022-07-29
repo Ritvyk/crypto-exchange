@@ -1,14 +1,24 @@
 const express = require("express")
+const cors = require("cors")
+const http = require("http")
+const {Server} = require("socket.io")
+const {socketServer,socketServerCORS} = require("./socketServer")
 
 const app = express()
+app.use(cors())
+
 const PORT = 5500
 
-app.get("/",(req,res)=>{
-    res.json({
-        greet: "Hello world"
-    })
+const server = http.createServer(app)
+
+const io = new Server(server,{
+    cors: socketServerCORS
 })
 
-app.listen(PORT,()=>{
-    console.log("Started server at port ",PORT)
+io.on("connection",(socket)=>{
+    socketServer(io,socket)
 })
+
+server.listen(PORT)
+
+
