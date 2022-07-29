@@ -1,4 +1,4 @@
-# Getting started with crypto exchange React Node app
+# Getting started with crypto exchange React Node App 🚀
 
 This project is created using binance API , React as frontend and Node as Backend.
 
